@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#webcamButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#scoreBoard {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.videoView {
+    position: relative;
+    width: fit-content;
+}
+
+video {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    object-fit: cover;
+}
+
+canvas {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+#webcam, #output_canvas {
+    transform: scaleX(-1);
+}

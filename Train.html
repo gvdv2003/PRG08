@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer type="module" src="/js/Train.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+    <title>Train</title>
+</head>
+<body>
+<section>
+    <h1>Teach Training Data</h1>
+    <button id="webcamButton">STARTWEBCAM</button>
+    <br>
+    <br>
+    <button id="upButton">Up</button>
+    <button id="downButton">Down</button>
+    <button id="leftButton">Left</button>
+    <button id="rightButton">Right</button>
+    <br>
+    <br>
+    <button id="exportButton">export Data points</button>
+
+    <div><br><br></div>
+
+    <h1>NN Training</h1>
+
+    <button id="TrainButton">Train</button>
+    <button id="NNButton">NN export</button>
+
+    <div><br><br></div>
+
+    <!-- Accuracy Section -->
+    <h1>Accuracy and Confusion Matrix</h1>
+    <button id="AccuracyButton">Accuracy Test</button>
+    <button id="tabelButton">Show Confusion Matrix</button>
+
+    <div id="accuracyResult"></div>
+    <div id="confusionMatrixResult"></div>
+
+
+    <div class="videoView">
+        <div style="position: relative;">
+            <video id="webcam" style="position: absolute;" muted autoplay playsinline></video>
+            <canvas id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
