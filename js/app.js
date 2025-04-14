@@ -1,6 +1,5 @@
 import { HandLandmarker, FilesetResolver, DrawingUtils } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.18";
 
-// HTML elements
 const enableWebcamButton = document.getElementById("webcamButton");
 const video = document.getElementById("webcam");
 const canvasElement = document.getElementById("output_canvas");
@@ -72,7 +71,6 @@ function spawnEnemy() {
 
     enemies.push(enemy);
 
-    // Verhoog snelheid alleen voor toekomstige vijanden, niet voor bestaande
     if (enemySpeed < maxEnemySpeed) {
         enemySpeed = Math.min(maxEnemySpeed, enemySpeed + speedIncreaseFactor);
     }
@@ -125,7 +123,7 @@ function attack() {
     if (index !== -1) {
         enemies.splice(index, 1);
         score++;
-        document.getElementById("scoreBoard").innerText = `Score: ${score}`; // ✅ Update score op het scherm
+        document.getElementById("scoreBoard").innerText = `Score: ${score}`;
         console.log(`Vijand geraakt! Score: ${score}`);
     } else {
         console.log("Mis!");
@@ -155,7 +153,6 @@ const createHandLandmarker = async () => {
 
 const hasGetUserMedia = () => !!navigator.mediaDevices?.getUserMedia;
 
-// ✅ Nieuwe vlag om interval één keer te starten
 let spawnLoopStarted = false;
 
 function enableCam() {
@@ -175,7 +172,6 @@ function enableCam() {
                 predictWebcam();
                 gameLoop();
 
-                // ✅ Start vijand-spawn interval als dat nog niet is gedaan
                 if (!spawnLoopStarted) {
                     setInterval(spawnEnemy, 10000);
                     spawnLoopStarted = true;
@@ -245,13 +241,11 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// Functie om de game over pop-up te tonen
 function showGameOver() {
     scoreDisplay.innerText = `Je eindscore is: ${score}`;
     popup.style.display = "block"; // Zorgt ervoor dat de pop-up verschijnt
 }
 
-// Event listener voor de "Speel opnieuw" knop
 restartButton.addEventListener("click", () => {
     location.reload();  // Herlaadt de pagina voor een nieuw spel
 });

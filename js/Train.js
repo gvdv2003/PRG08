@@ -265,7 +265,6 @@ document.getElementById("tabelButton").addEventListener("click", () => {
     displayConfusionMatrix();
 });
 
-// Function to display the confusion matrix
 function displayConfusionMatrix() {
     const matrixElement = document.getElementById("confusionMatrixResult");
     let matrixHTML = "<table border='1'><tr><th>Actual/Pred</th><th>Up</th><th>Down</th><th>Left</th><th>Right</th></tr>";
